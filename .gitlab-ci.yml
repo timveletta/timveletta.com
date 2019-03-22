@@ -26,8 +26,9 @@ build:
     image: python:alpine
     before_script:
         - pip install awscli
-
-
+        - export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+        - export AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+        
 deploy-dev:
     <<: *deploy
     script:
