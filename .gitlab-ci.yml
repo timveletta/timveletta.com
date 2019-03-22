@@ -32,7 +32,7 @@ deploy-dev:
     <<: *deploy
     script:
         - aws s3 cp ./public s3://timveletta.com-dev --recursive
-        aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
     only:
         - develop
 
