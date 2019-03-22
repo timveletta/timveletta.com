@@ -31,13 +31,13 @@ build:
 deploy-dev:
     <<: *deploy
     script:
-        - aws s3 cp ./public s3://timveletta.com-dev
+        - aws s3 cp ./public s3://timveletta.com-dev --recursive
     only:
         - develop
 
 deploy-prod:
     <<: *deploy
     script:
-        - aws s3 cp ./public s3://timveletta.com-prod
+        - aws s3 cp ./public s3://timveletta.com-prod  --recursive
     only:
         - master
