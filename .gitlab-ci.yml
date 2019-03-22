@@ -1,0 +1,44 @@
+stages:
+    - build
+    - deploy
+
+variables:
+    AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+    - npm ci --only=production
+
+build:
+    stage: build
+    image: node:alpine
+    script:
+        - npm run build
+    artifacts:
+        paths:
+        - public
+
+.deploy: &deploy
+    stage: deploy
+    image: python:alpine
+    before_script:
+        - pip install awscli
+
+
+deploy-dev:
+    <<: *deploy
+    script:
+        - aws s3 cp ./public s3://timveletta.com-dev
+    only:
+        - develop
+
+deploy-prod:
+    <<: *deploy
+    script:
+        - aws s3 cp ./public s3://timveletta.com-prod
+    only:
+        - master
