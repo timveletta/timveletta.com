@@ -1,0 +1,44 @@
+stages:
+    - build
+    - deploy
+
+variables:
+    AWS_DEFAULT_REGION: ap-southeast-2
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+    - npm ci --only=production
+
+build:
+    stage: build
+    image: node:alpine
+    script:
+        - npm run build
+    artifacts:
+        paths:
+        - public
+
+.deploy: &deploy
+    stage: deploy
+    image: python:alpine
+    before_script:
+        - pip install awscli
+        - export
+        
+deploy-dev:
+    <<: *deploy
+    script:
+        - aws s3 cp ./public s3://timveletta.com-dev --recursive
+        - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+    only:
+        - develop
+
+deploy-prod:
+    <<: *deploy
+    script:
+        - aws s3 cp ./public s3://timveletta.com-prod  --recursive
+    only:
+        - master
