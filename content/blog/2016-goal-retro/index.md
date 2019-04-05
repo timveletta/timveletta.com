@@ -2,14 +2,13 @@
 layout: post
 title: "2016 Goal Retro"
 date: 2017-01-15
-excerpt_separator:  <!--more-->
-tags: 
+excerpt_separator: <!--more-->
+tags:
   - 2016 personal goal
   - board games
 ---
 
 Following on from my previous post about my yearly personal goal, I would like to write about how I went with my 2016 goal. In 2016 my goal was to play more board games, my collection had ballooned to the point of me struggling to play many of them so I decided to try to:
-
 
 - Play 10 games at least 10 times (the 10x10 challenge)
 
@@ -20,18 +19,19 @@ Following on from my previous post about my yearly personal goal, I would like t
 So lets have a look into how I went.
 
 ### The 10x10 Challenge
+
 I chose at the beginning of the year to not do the strict 10x10 challenge where you have to predetermine what 10 games you are going to play. My reason for this is my collection was still growing and it was really hard for me to choose only 10 to play. This one I got pretty close with, I managed to get 7 games played at least 10 times and the remaining 3 were within 2 plays of reaching 10. These games were:
 
-   1. Secret Hitler (58 plays)
-   2. Deception: Murder in Hong Kong (45 plays)
-   3. Codenames (22 plays)
-   4. Splendor (13 plays)
-   5. Captain Sonar (11 plays)
-   6. Zombicide: Black Plague (11 plays)
-   7. One Night Ultimate Werewolf (10 plays)
-   8. Coup: Rebellion G54 (9 plays)
-   9. Control (8 plays)
-   10. Tsuro (8 plays)
+1.  Secret Hitler (58 plays)
+2.  Deception: Murder in Hong Kong (45 plays)
+3.  Codenames (22 plays)
+4.  Splendor (13 plays)
+5.  Captain Sonar (11 plays)
+6.  Zombicide: Black Plague (11 plays)
+7.  One Night Ultimate Werewolf (10 plays)
+8.  Coup: Rebellion G54 (9 plays)
+9.  Control (8 plays)
+10. Tsuro (8 plays)
 
 ### The 100x1 Challenge
 
@@ -139,9 +139,9 @@ This one I also got pretty close with, I managed to play 90 different games thro
 
 ### The Wall of Shame
 
-The Wall of Shame is a list of games in my collection that I have not or did not play in 2016 and its a ridiculously long list. I did very poorly trying to play all the games in my collection in 2016. My poor effort pretty much came down to 2 factors, my acquisition of board games increased throughout the year and I was struggling to get new games to the table. I fell victim to a lot of hype around some games and sometimes it worked out very well but others I haven't managed to get to the table yet. Overall there was 50 games in my collection that I did not play and at the start of the year I said to myself I would sell the ones I didn't play. 
+The Wall of Shame is a list of games in my collection that I have not or did not play in 2016 and its a ridiculously long list. I did very poorly trying to play all the games in my collection in 2016. My poor effort pretty much came down to 2 factors, my acquisition of board games increased throughout the year and I was struggling to get new games to the table. I fell victim to a lot of hype around some games and sometimes it worked out very well but others I haven't managed to get to the table yet. Overall there was 50 games in my collection that I did not play and at the start of the year I said to myself I would sell the ones I didn't play.
 
-A lot of the games on my Wall of Shame are set to be culled from my collection to make room for new ones. Below is my Wall of Shame with the games that are being culled marked with an *.
+A lot of the games on my Wall of Shame are set to be culled from my collection to make room for new ones. Below is my Wall of Shame with the games that are being culled marked with an \*.
 
 <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#wallOfShame" aria-expanded="false" aria-controls="wallOfShame">

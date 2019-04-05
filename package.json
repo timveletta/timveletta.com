@@ -1,13 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "timveletta.com",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "The personal portfolio website for Tim Veletta",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Tim Veletta <tim.veletta@gmail.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.1.31",
     "gatsby-image": "^2.0.33",
     "gatsby-plugin-feed": "^2.0.15",
@@ -17,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-s3": "^0.2.5",
     "gatsby-plugin-sharp": "^2.0.28",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-plugin-typography": "^2.2.9",
     "gatsby-remark-copy-linked-files": "^2.0.10",
     "gatsby-remark-images": "^2.0.6",
@@ -31,6 +30,7 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
+    "styled-components": "^4.2.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.54",
     "typography": "^0.16.19",
@@ -39,7 +39,7 @@
   "devDependencies": {
     "prettier": "^1.16.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://timveletta.com",
   "keywords": [
     "gatsby"
   ],

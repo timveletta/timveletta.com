@@ -1,12 +1,29 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import styled from "styled-components"
+import { graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
+import ProjectDisplay from "../components/project-display"
+import BlogPostDisplay from "../components/blog-post-display"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 
-class BlogIndex extends React.Component {
+const Section = styled.div`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 1rem;
+  }
+`
+
+const Projects = styled(Section)``
+
+const BlogPosts = styled(Section)``
+
+class Homepage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -15,39 +32,38 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Bio />
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return (
-            <div key={node.fields.slug}>
-              <h3
-                style={{
-                  marginBottom: rhythm(1 / 4),
-                }}
-              >
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              {/* <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              /> */}
-            </div>
-          )
-        })}
+        <Projects>
+          <h1>Latest Projects</h1>
+          <div>
+            <ProjectDisplay name="Project 1" />
+            <ProjectDisplay name="Project 1" />
+            <ProjectDisplay name="Project 1" />
+          </div>
+        </Projects>
+        <BlogPosts>
+          <h1>Recent Blog Posts</h1>
+          <div>
+            {posts.map(({ node }) => (
+              <BlogPostDisplay
+                key={node.fields.slug}
+                title={node.frontmatter.title || node.fields.slug}
+                slug={node.fields.slug}
+                date={node.frontmatter.date}
+                excerpt={node.excerpt}
+              />
+            ))}
+          </div>
+        </BlogPosts>
+        {/* Contact */}
       </Layout>
     )
   }
 }
 
-export default BlogIndex
+export default Homepage
 
 export const pageQuery = graphql`
   query {
@@ -59,7 +75,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          html
+          excerpt(pruneLength: 280)
           fields {
             slug
           }

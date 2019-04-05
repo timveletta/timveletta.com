@@ -2,7 +2,6 @@
 layout: post
 title: "TeleBlast will be at PAX Australia"
 date: 2018-08-14
-excerpt_separator: <!--more-->
 tags:
   - game dev
   - teleblast
