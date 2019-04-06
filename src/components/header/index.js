@@ -16,6 +16,7 @@ const Container = styled.header`
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0.5rem;
 
     h1 {
       font-size: 2.5rem;
