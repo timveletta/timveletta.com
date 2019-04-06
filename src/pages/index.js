@@ -9,26 +9,43 @@ import SEO from "../components/seo"
 import { COLORS, FONTS } from "../utils/css-globals"
 
 const Section = styled.div`
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  > div {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
-  }
-`
-
-const Projects = styled(Section)`
   text-align: center;
+
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+
   h1 {
-    line-height: 1.5;
     font-family: ${FONTS.primary};
+    margin-bottom: 2rem;
+  }
+
+  > div {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+
+    > div {
+      flex: 1 1 320px;
+      min-height: 320px;
+    }
   }
 `
 
-const BlogPosts = styled(Section)``
+const Projects = styled(Section)``
+
+const BlogPosts = styled(Section)`
+  background-color: ${COLORS.primary};
+  color: ${COLORS.secondary};
+`
+
+const Contact = styled(Section)`
+  background-color: ${COLORS.primary};
+  color: ${COLORS.secondary};
+`
 
 class Homepage extends React.Component {
   render() {
@@ -43,7 +60,7 @@ class Homepage extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Projects>
-          <h1>Latest Projects</h1>
+          <h1>Projects</h1>
           <div>
             <ProjectDisplay name="Project 1" />
             <ProjectDisplay name="Project 1" />
