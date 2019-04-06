@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import ProjectDisplay from "../components/project-display"
 import BlogPostDisplay from "../components/blog-post-display"
 import SEO from "../components/seo"
+import { COLORS, FONTS } from "../utils/css-globals"
 
 const Section = styled.div`
   max-width: 1200px;
@@ -19,7 +20,13 @@ const Section = styled.div`
   }
 `
 
-const Projects = styled(Section)``
+const Projects = styled(Section)`
+  text-align: center;
+  h1 {
+    line-height: 1.5;
+    font-family: ${FONTS.primary};
+  }
+`
 
 const BlogPosts = styled(Section)``
 
