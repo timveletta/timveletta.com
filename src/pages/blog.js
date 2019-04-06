@@ -41,7 +41,6 @@ const Projects = styled(Section)``
 const BlogPosts = styled(Section)`
   background-color: ${COLORS.primary};
   color: ${COLORS.secondary};
-  justify-content: center;
 `
 
 const Contact = styled(Section)`
@@ -49,7 +48,7 @@ const Contact = styled(Section)`
   color: ${COLORS.secondary};
 `
 
-class Homepage extends React.Component {
+class Blog extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -81,8 +80,8 @@ class Homepage extends React.Component {
                 excerpt={node.excerpt}
               />
             ))}
+            <Button name="View All Posts" />
           </div>
-          <Button to="/blog" name="View All Posts" />
         </BlogPosts>
         {/* Contact */}
       </Layout>
@@ -90,7 +89,7 @@ class Homepage extends React.Component {
   }
 }
 
-export default Homepage
+export default Blog
 
 export const pageQuery = graphql`
   query {
@@ -99,10 +98,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
-      limit: 3
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt(pruneLength: 280)

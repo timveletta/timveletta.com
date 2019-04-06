@@ -8,17 +8,19 @@ const Container = styled.button`
   cursor: pointer;
   font-family: ${FONTS.secondary};
   min-width: 4rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   font-size: 1rem;
   border: none;
-  border: 1px solid ${COLORS.primary};
+  border: 1px solid ${COLORS.secondary};
   outline: none;
-  background: ${COLORS.secondary};
-  color: ${COLORS.primary};
+  background: transparent;
+  color: ${COLORS.secondary};
   box-sizing: border-box;
   font-weight: bold;
   &:hover {
     background: ${COLORS.accent};
+    color: ${COLORS.primary};
+    border: 1px solid ${COLORS.primary};
   }
   &:disabled {
     opacity: 0.5;
