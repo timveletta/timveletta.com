@@ -36,28 +36,35 @@ const Container = styled.div`
     grid-column: 1 / 1;
     grid-row: 1/1;
   }
-  /* width: 100%;
-  height: 100%; */
-  /* 
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  text-align: center; */
 `
 
-const ProjectDisplay = ({ name }) => (
+const ProjectDisplay = ({ name, tags, slug }) => (
   <Container>
     <img src="https://via.placeholder.com/400" width="100%" height="100%" />
     <div>
       <h2>{name}</h2>
-      <h5>Tags</h5>
-      <ButtonSecondary name="View Project" />
+      <h5>
+        {tags.map((t, index) => (
+          <span key={t}>
+            {t}
+            {index !== tags.length - 1 ? " | " : ""}
+          </span>
+        ))}
+      </h5>
+      <ButtonSecondary name="View Project" to={slug} />
     </div>
   </Container>
 )
 
 ProjectDisplay.propTypes = {
   name: PropTypes.string.isRequired,
+  slug: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
+}
+
+ProjectDisplay.defaultProps = {
+  tags: ["None"],
+  slug: "/",
 }
 
 export default ProjectDisplay

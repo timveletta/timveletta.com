@@ -11,8 +11,7 @@ import { COLORS, FONTS } from "../utils/css-globals"
 const Section = styled.div`
   text-align: center;
 
-  padding-top: 4rem;
-  padding-bottom: 6rem;
+  padding: 4rem 0.5rem 6rem 0.5rem;
 
   h1 {
     font-family: ${FONTS.primary};
