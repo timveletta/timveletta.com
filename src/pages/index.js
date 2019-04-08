@@ -4,13 +4,15 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import ProjectDisplay from "../components/project-display"
-import BlogPostDisplay from "../components/blog-post-display"
+import { BlogPostPreview } from "../components/blog-post"
 import SEO from "../components/seo"
 import Button from "../components/button"
 import Header from "../components/header"
 import AboutMe from "../components/about-me"
 
 import { COLORS, FONTS } from "../utils/css-globals"
+
+import TeleBlastImage from "../../content/assets/teleblast.jpg"
 
 const Section = styled.div`
   text-align: center;
@@ -30,6 +32,7 @@ const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
+    justify-content: center;
 
     > div {
       flex: 1 1 320px;
@@ -74,16 +77,20 @@ class Homepage extends React.Component {
         <Projects>
           <h1>Projects</h1>
           <div>
-            <ProjectDisplay name="Project 1" />
-            <ProjectDisplay name="Project 1" />
-            <ProjectDisplay name="Project 1" />
+            <ProjectDisplay
+              name="TeleBlast"
+              tags={["Game", "In Progress"]}
+              image={TeleBlastImage}
+            />
+            {/* <ProjectDisplay name="Project 1" />
+            <ProjectDisplay name="Project 1" /> */}
           </div>
         </Projects>
         <BlogPosts>
           <h1>Recent Blog Posts</h1>
           <div>
             {posts.map(({ node }) => (
-              <BlogPostDisplay
+              <BlogPostPreview
                 key={node.fields.slug}
                 title={node.frontmatter.title || node.fields.slug}
                 slug={node.fields.slug}

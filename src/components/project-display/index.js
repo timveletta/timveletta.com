@@ -7,6 +7,7 @@ import { COLORS, COLORS_RGB, FONTS } from "../../utils/css-globals"
 const Container = styled.div`
   display: grid;
   margin: 0.5rem;
+  max-width: 400px;
 
   :hover div {
     visibility: visible;
@@ -35,12 +36,16 @@ const Container = styled.div`
   > img {
     grid-column: 1 / 1;
     grid-row: 1/1;
+    display: block;
+    max-width: 400px;
+    width: auto;
+    height: auto;
   }
 `
 
-const ProjectDisplay = ({ name, tags, slug }) => (
+const ProjectDisplay = ({ name, tags, slug, image }) => (
   <Container>
-    <img src="https://via.placeholder.com/400" width="100%" height="100%" />
+    <img src={image} width="400" height="400" />
     <div>
       <h2>{name}</h2>
       <h5>
@@ -51,7 +56,7 @@ const ProjectDisplay = ({ name, tags, slug }) => (
           </span>
         ))}
       </h5>
-      <ButtonSecondary name="View Project" to={slug} />
+      {slug && <ButtonSecondary name="View Project" to={slug} />}
     </div>
   </Container>
 )
@@ -64,7 +69,6 @@ ProjectDisplay.propTypes = {
 
 ProjectDisplay.defaultProps = {
   tags: ["None"],
-  slug: "/",
 }
 
 export default ProjectDisplay

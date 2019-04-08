@@ -3,8 +3,9 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import BlogPostDisplay from "../components/blog-post-display"
+import BlogPost from "../components/blog-post"
 import SEO from "../components/seo"
+import Navigation from "../components/navigation"
 
 import { COLORS, FONTS } from "../utils/css-globals"
 
@@ -26,17 +27,12 @@ const Section = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
-
-    > div {
-      flex: 1 1 320px;
-      min-height: 320px;
-    }
   }
 `
 
 const BlogPosts = styled(Section)`
-  background-color: ${COLORS.primary};
-  color: ${COLORS.secondary};
+  background-color: ${COLORS.secondary};
+  color: ${COLORS.primary};
 `
 
 class Blog extends React.Component {
@@ -47,20 +43,21 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+        <Navigation />
         <SEO
-          title="Home"
+          title="Blog"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <BlogPosts>
           <h1>Blog Posts</h1>
           <div>
             {posts.map(({ node }) => (
-              <BlogPostDisplay
+              <BlogPost
                 key={node.fields.slug}
                 title={node.frontmatter.title || node.fields.slug}
                 slug={node.fields.slug}
                 date={node.frontmatter.date}
-                excerpt={node.excerpt}
+                content={node.html}
               />
             ))}
           </div>
@@ -82,7 +79,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
-          excerpt(pruneLength: 280)
+          html
           fields {
             slug
           }

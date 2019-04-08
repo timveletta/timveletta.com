@@ -15,26 +15,34 @@ const Container = styled.div`
     color: ${COLORS.accent};
   }
 
-  h2 {
+  h1 {
     margin: 0;
     text-align: left;
+    align-self: end;
     line-height: 1.5;
     font-family: ${FONTS.primary};
+    color: ${COLORS.accent};
   }
   h5 {
     margin: 0.5rem;
     font-family: ${FONTS.secondary};
     color: ${COLORS.muted};
     text-transform: uppercase;
+    text-align: left;
   }
   p {
     line-height: 2;
     font-family: ${FONTS.secondary};
     text-align: justify;
+
+    h1 {
+      font-size: 1.5rem;
+      color: ${COLORS.primary};
+    }
   }
 `
 
-const BlogPostDisplay = ({ title, slug, date, excerpt }) => (
+const BlogPostPreview = ({ title, slug, date, excerpt }) => (
   <Container>
     <Link to={slug}>
       <h2>{title}</h2>
@@ -51,11 +59,31 @@ const BlogPostDisplay = ({ title, slug, date, excerpt }) => (
   </Container>
 )
 
-BlogPostDisplay.propTypes = {
+BlogPostPreview.propTypes = {
   title: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   date: PropTypes.string,
   excerpt: PropTypes.string,
 }
 
-export default BlogPostDisplay
+const BlogPost = ({ title, slug, date, content }) => (
+  <Container>
+    {slug ? (
+      <Link to={slug}>
+        <h1>{title}</h1>
+      </Link>
+    ) : (
+      <h1>{title}</h1>
+    )}
+    <h5>{date}</h5>
+    <p
+      dangerouslySetInnerHTML={{
+        __html: content,
+      }}
+    />
+  </Container>
+)
+
+export default BlogPost
+
+export { BlogPostPreview }
