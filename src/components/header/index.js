@@ -1,8 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { COLORS, FONTS } from "../../utils/css-globals"
-import { FaGitlab, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
-import { Link } from "gatsby"
+import SocialLinks from "../social-links"
 
 const Container = styled.header`
   background-color: ${COLORS.primary};
@@ -31,19 +30,6 @@ const Emphasis = styled.span`
   font-weight: bold;
 `
 
-const SocialLinks = styled.div`
-  text-align: center;
-  font-size: 2rem;
-  > a {
-    color: ${COLORS.muted};
-    margin: 0.5rem;
-
-    :hover {
-      color: ${COLORS.accent};
-    }
-  }
-`
-
 const Header = () => (
   <Container>
     <div>
@@ -55,20 +41,7 @@ const Header = () => (
         <Emphasis>games</Emphasis> and{" "}
         <Emphasis>cloud based applications</Emphasis>.
       </h1>
-      <SocialLinks>
-        <a href="https://gitlab.com/timveletta">
-          <FaGitlab />
-        </a>
-        <a href="https://twitter.com/timveletta">
-          <FaTwitter />
-        </a>
-        <a href="https://instagram.com/t1mmahh">
-          <FaInstagram />
-        </a>
-        <a href="mailto: tim.veletta@gmail.com">
-          <FaEnvelope />
-        </a>
-      </SocialLinks>
+      <SocialLinks />
     </div>
   </Container>
 )

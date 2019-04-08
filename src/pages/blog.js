@@ -3,10 +3,8 @@ import styled from "styled-components"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import ProjectDisplay from "../components/project-display"
 import BlogPostDisplay from "../components/blog-post-display"
 import SEO from "../components/seo"
-import Button from "../components/button"
 
 import { COLORS, FONTS } from "../utils/css-globals"
 
@@ -36,14 +34,7 @@ const Section = styled.div`
   }
 `
 
-const Projects = styled(Section)``
-
 const BlogPosts = styled(Section)`
-  background-color: ${COLORS.primary};
-  color: ${COLORS.secondary};
-`
-
-const Contact = styled(Section)`
   background-color: ${COLORS.primary};
   color: ${COLORS.secondary};
 `
@@ -60,16 +51,8 @@ class Blog extends React.Component {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        <Projects>
-          <h1>Projects</h1>
-          <div>
-            <ProjectDisplay name="Project 1" />
-            <ProjectDisplay name="Project 1" />
-            <ProjectDisplay name="Project 1" />
-          </div>
-        </Projects>
         <BlogPosts>
-          <h1>Recent Blog Posts</h1>
+          <h1>Blog Posts</h1>
           <div>
             {posts.map(({ node }) => (
               <BlogPostDisplay
@@ -80,10 +63,8 @@ class Blog extends React.Component {
                 excerpt={node.excerpt}
               />
             ))}
-            <Button name="View All Posts" />
           </div>
         </BlogPosts>
-        {/* Contact */}
       </Layout>
     )
   }

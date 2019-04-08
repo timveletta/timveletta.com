@@ -7,6 +7,8 @@ import ProjectDisplay from "../components/project-display"
 import BlogPostDisplay from "../components/blog-post-display"
 import SEO from "../components/seo"
 import Button from "../components/button"
+import Header from "../components/header"
+import AboutMe from "../components/about-me"
 
 import { COLORS, FONTS } from "../utils/css-globals"
 
@@ -36,7 +38,9 @@ const Section = styled.div`
   }
 `
 
-const Projects = styled(Section)``
+const Projects = styled(Section)`
+  background-color: ${COLORS.accent};
+`
 
 const BlogPosts = styled(Section)`
   background-color: ${COLORS.primary};
@@ -44,9 +48,9 @@ const BlogPosts = styled(Section)`
   justify-content: center;
 `
 
-const Contact = styled(Section)`
-  background-color: ${COLORS.primary};
-  color: ${COLORS.secondary};
+const About = styled(Section)`
+  background-color: ${COLORS.secondary};
+  color: ${COLORS.primary};
 `
 
 class Homepage extends React.Component {
@@ -57,10 +61,16 @@ class Homepage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
+        <Header />
         <SEO
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
+        <About>
+          <div>
+            <AboutMe />
+          </div>
+        </About>
         <Projects>
           <h1>Projects</h1>
           <div>
@@ -84,7 +94,6 @@ class Homepage extends React.Component {
           </div>
           <Button to="/blog" name="View All Posts" />
         </BlogPosts>
-        {/* Contact */}
       </Layout>
     )
   }
