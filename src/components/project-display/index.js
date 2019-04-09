@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import Image from "gatsby-image"
 import { ButtonSecondary } from "../button"
 import { COLORS, COLORS_RGB, FONTS } from "../../utils/css-globals"
 
@@ -9,13 +10,13 @@ const Container = styled.div`
   margin: 0.5rem;
   max-width: 400px;
 
-  :hover div {
+  :hover #details {
     visibility: visible;
   }
 
-  div {
+  #details {
     visibility: hidden;
-
+    z-index: 1;
     display: grid;
     grid-column: 1 / 1;
     grid-row: 1 / 1;
@@ -30,10 +31,14 @@ const Container = styled.div`
       font-family: ${FONTS.secondary};
       color: ${COLORS.accent};
       text-transform: uppercase;
+
+      #tag {
+        padding: 0.5rem;
+      }
     }
   }
 
-  > img {
+  .gatsby-image-wrapper {
     grid-column: 1 / 1;
     grid-row: 1/1;
     display: block;
@@ -45,13 +50,13 @@ const Container = styled.div`
 
 const ProjectDisplay = ({ name, tags, slug, image }) => (
   <Container>
-    <img src={image} width="400" height="400" />
-    <div>
+    <Image fluid={image} width="400" height="400" alt={name} />
+    <div id="details">
       <h2>{name}</h2>
       <h5>
         {tags.map((t, index) => (
-          <span key={t}>
-            {t}
+          <span>
+            <span id="tag">{t}</span>
             {index !== tags.length - 1 ? " | " : ""}
           </span>
         ))}

@@ -41,6 +41,8 @@ const SecondaryContainer = styled(Container)`
 
   &:hover {
     background: ${COLORS.primary};
+    color: ${COLORS.accent};
+    border: 1px solid ${COLORS.accent};
   }
 `
 

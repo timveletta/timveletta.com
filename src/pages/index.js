@@ -12,8 +12,6 @@ import AboutMe from "../components/about-me"
 
 import { COLORS, FONTS } from "../utils/css-globals"
 
-import TeleBlastImage from "../../content/assets/teleblast.jpg"
-
 const Section = styled.div`
   text-align: center;
 
@@ -60,7 +58,8 @@ class Homepage extends React.Component {
   render() {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+    const posts = data.blogPosts.edges
+    const projects = data.projects.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -77,13 +76,15 @@ class Homepage extends React.Component {
         <Projects>
           <h1>Projects</h1>
           <div>
-            <ProjectDisplay
-              name="TeleBlast"
-              tags={["Game", "In Progress"]}
-              image={TeleBlastImage}
-            />
-            {/* <ProjectDisplay name="Project 1" />
-            <ProjectDisplay name="Project 1" /> */}
+            {projects.map(({ node }) => (
+              <ProjectDisplay
+                key={node.frontmatter.title}
+                name={node.frontmatter.title}
+                tags={node.frontmatter.tags}
+                image={node.frontmatter.image.childImageSharp.fluid}
+                slug={node.fields.slug}
+              />
+            ))}
           </div>
         </Projects>
         <BlogPosts>
@@ -110,13 +111,14 @@ export default Homepage
 
 export const pageQuery = graphql`
   query {
-    site {
+    site: site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
+    blogPosts: allMarkdownRemark(
       limit: 3
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -127,6 +129,30 @@ export const pageQuery = graphql`
           }
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
+            title
+          }
+        }
+      }
+    }
+    projects: allMarkdownRemark(
+      limit: 3
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            tags
+            image {
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             title
           }
         }

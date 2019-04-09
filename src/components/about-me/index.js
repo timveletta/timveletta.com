@@ -33,13 +33,13 @@ const Container = styled.div`
     font-family: ${FONTS.secondary};
     font-size: 1.1rem;
     line-height: 1.5;
-    text-align: justify;
+    text-align: left;
   }
 `
 
 const AboutMe = () => (
   <Container>
-    <img src={MeImg} width="400" height="400" alt="Image of Me" />
+    <img src={MeImg} width="400" height="400" alt="Me" />
     <h3>
       I'm a full-stack software developer based in Perth, Australia with a firm
       interest in seeing ideas from conceptualisation through to delivery. I am
