@@ -10,6 +10,7 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 4rem;
+  padding: 1rem;
 
   h1 {
     text-align: center;
@@ -33,7 +34,7 @@ const Container = styled.div`
     color: ${COLORS.muted};
     text-transform: uppercase;
 
-    span {
+    #tag {
       padding: 0.5rem;
     }
   }
@@ -61,10 +62,10 @@ const Project = props => {
         <h3>{project.frontmatter.description}</h3>
         <h5>
           {project.frontmatter.tags.map((t, index) => (
-            <>
-              <span key={t}>{t}</span>
+            <span key={t}>
+              <span id="tag">{t}</span>
               {index !== project.frontmatter.tags.length - 1 ? " | " : ""}
-            </>
+            </span>
           ))}
         </h5>
         <p dangerouslySetInnerHTML={{ __html: project.html }} />

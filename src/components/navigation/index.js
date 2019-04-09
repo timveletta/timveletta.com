@@ -14,6 +14,7 @@ const Container = styled.nav`
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding: 1rem;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
