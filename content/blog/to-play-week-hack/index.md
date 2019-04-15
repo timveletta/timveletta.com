@@ -15,7 +15,7 @@ If you haven't played any of them, I highly recommend picking up one of their pa
 
 ## What do I hope to achieve?
 
-Something I have always wanted to do is replicate the experience of the Jackbox games where someone can host a game and then a 4 letter code is then shown on screen which all players input on their phone to join the game.
+Something I have always wanted to do is replicate the experience of the Jackbox games where someone can host a game and then a 4 letter code is then shown on screen which all players input on their phone to join the game. For more information about Jackbox games check out: https://jackboxgames.com/how-to-play/
 
 ## What I hope to learn?
 
