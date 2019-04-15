@@ -6,11 +6,12 @@ excerpt_separator: <!--more-->
 tags:
   - gamedev
   - aws
+  - toplay.tv
 ---
 
 Gaming for me these days is very much a social thing, I typically don't have the time or patience for long, single player or even online experiences or if I do, its usually broken up into small 15-30 minute chunks over a number of months. Most of my gaming these days is party games amongst friends and one of the staples of our group have been the Jackbox.tv games.
 
-If you haven't played any of them, I highly recommend picking up one of their party packs particularly during a Steam Sale (party pack 4 is my favorite). Each party pack has a number of games based around the premise of using your phone to join the game with the main gameplay taking place on a TV. The games are typically quite social and often involve drawing or answering questions. They don't require fast reaction speeds or indepth game knowledge making the barrier to entry very low; you really only need a phone to participate.
+If you haven't played any of them, I highly recommend picking up one of their party packs particularly during a Steam Sale (party pack 3 is my favorite). Each party pack has a number of games based around the premise of using your phone to join the game with the main gameplay taking place on a TV. The games are typically quite social and often involve drawing or answering questions. They don't require fast reaction speeds or indepth game knowledge making the barrier to entry very low; you really only need a phone to participate.
 
 ## What do I hope to achieve?
 
@@ -34,4 +35,4 @@ I think this is something I need to get in the habit of when working on side pro
 
 ## Follow my progress
 
-I will be tweeting my progress throughout the week on [my personal Twitter](https://twitter.com/timveletta) with the hashtag #toplay and will hopefully have something to show reasonably soon.
+I will be tweeting my progress throughout the week on [my personal Twitter](https://twitter.com/timveletta) with the hashtag #toplaytv and will hopefully have something to show reasonably soon.
