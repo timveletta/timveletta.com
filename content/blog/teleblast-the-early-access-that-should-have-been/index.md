@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "TeleBlast - The Early Access release that should have been!"
-date: 2018-05-14
+date: 2019-05-14
 excerpt_separator: <!--more-->
 tags:
   - game dev
