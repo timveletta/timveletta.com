@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "TeleBlast - The Early Access release that should have been!"
-date: 2019-05-15
+date: 2019-05-16
 excerpt_separator: <!--more-->
 tags:
   - game dev
   - teleblast
 ---
 
-As of right now it has been over 6 months since the last and only TeleBlast update and it is with great excitement that I announce that a new update is coming tomorrow, the 16th of May.
+As of right now it has been over 6 months since the last and only TeleBlast update and it is with great excitement that I announce that a new update is coming tomorrow, the 17th of May.
 
 **Firstly, I must apologise to the people that put their trust in me and bought the game in Early Access; I feel like I have let each one of you down by taking this long and I hope that I can restore your trust not only with this release but also the releases going forward.**
 
