@@ -2,3 +2,36 @@ body {
   margin: 0;
   background-color: #ecf0f1;
 }
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+code[class*="language-"] {
+  background-color: #fdf6e3;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  border-radius: 0.3em;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+  word-wrap: normal;
+  width: auto;
+  width: 100px;
+  overflow: auto;
+}
+
+pre code {
+  white-space: inherit;
+  padding: 0;
+}

@@ -7,7 +7,7 @@ import { COLORS, FONTS } from "../../utils/css-globals"
 const Container = styled.div`
   display: grid;
   grid-template-rows: 8rem 2rem auto;
-  margin: 2rem;
+  margin: 1rem;
 
   a {
     text-decoration: none;

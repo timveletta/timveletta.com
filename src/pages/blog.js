@@ -12,28 +12,36 @@ import { COLORS, FONTS } from "../utils/css-globals"
 const Section = styled.div`
   text-align: center;
 
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 4rem 0.5rem 6rem 0.5rem;
 
   h1 {
     font-family: ${FONTS.primary};
     margin-bottom: 2rem;
   }
-
-  > div {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
-  }
 `
 
 const BlogPosts = styled(Section)`
   background-color: ${COLORS.secondary};
   color: ${COLORS.primary};
+  display: grid;
+
+  grid-template-columns: auto;
+
+  > h1 {
+    /* grid-column: span 2; */
+  }
 `
+
+const Posts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+`
+
+const Tags = styled.div``
 
 class Blog extends React.Component {
   render() {
@@ -50,7 +58,7 @@ class Blog extends React.Component {
         />
         <BlogPosts>
           <h1>Blog Posts</h1>
-          <div>
+          <Posts>
             {posts.map(({ node }) => (
               <BlogPost
                 key={node.fields.slug}
@@ -60,7 +68,13 @@ class Blog extends React.Component {
                 content={node.html}
               />
             ))}
-          </div>
+          </Posts>
+          {/* <Tags>
+            <h2>Tags</h2>
+            <ul>
+              <li>Tag</li>
+            </ul>
+          </Tags> */}
         </BlogPosts>
       </Layout>
     )
