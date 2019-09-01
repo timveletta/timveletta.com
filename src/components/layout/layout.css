@@ -29,6 +29,7 @@ code[class*="language-"] {
   width: auto;
   width: 100px;
   overflow: auto;
+  max-height: 400px;
 }
 
 pre code {
