@@ -53,7 +53,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: actions/aws/cli@master
         with:
-          args: s3 cp ./public s3://dash-plumbing --recursive
+          args: s3 cp ./public s3://timveletta.com-prod --recursive
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -62,8 +62,8 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: actions/aws/cli@master
         with:
-          args: cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DISTRIBUTION_ID --paths '/*'
+          args: cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DISTRIBUTION_ID --paths '/index.html'
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          CLOUDFRONT_DISTRIBUTION_ID: <<INSERT DISTRIBUTION ID HERE>>
+          CLOUDFRONT_DISTRIBUTION_ID: tkRCddWabCdP0EG3DAMFqkBWOZRXl422xtJzW6ul
