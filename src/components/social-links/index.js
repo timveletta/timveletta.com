@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { FaGitlab, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
+import { FaGithub, FaTwitter, FaInstagram, FaEnvelope } from "react-icons/fa"
 import { COLORS } from "../../utils/css-globals"
 
 const Container = styled.div`
@@ -18,8 +18,8 @@ const Container = styled.div`
 
 const SocialLinks = () => (
   <Container>
-    <a href="https://gitlab.com/timveletta">
-      <FaGitlab />
+    <a href="https://github.com/timveletta">
+      <FaGithub />
     </a>
     <a href="https://twitter.com/timveletta">
       <FaTwitter />
