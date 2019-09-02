@@ -94,7 +94,7 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: actions/aws/cli@master
         with:
-          args: s3 cp ./public s3://dash-plumbing --recursive
+          args: s3 cp ./public s3://<<INSERT S3 DIRECTORY HERE>> --recursive
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
