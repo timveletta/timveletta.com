@@ -30,7 +30,7 @@ const Container = styled.div`
     text-transform: uppercase;
     text-align: left;
   }
-  p {
+  div {
     line-height: 2;
     font-family: ${FONTS.secondary};
     text-align: justify;
@@ -48,14 +48,14 @@ const BlogPostPreview = ({ title, slug, date, excerpt }) => (
       <h2>{title}</h2>
     </Link>
     <h5>{date}</h5>
-    <p>
-      <span
-        dangerouslySetInnerHTML={{
-          __html: excerpt,
-        }}
-      />
+    <div
+      dangerouslySetInnerHTML={{
+        __html: excerpt,
+      }}
+    />
+    <div style={{ textAlign: "right" }}>
       <Link to={slug}>Read More</Link>
-    </p>
+    </div>
   </Container>
 )
 
@@ -76,7 +76,7 @@ const BlogPost = ({ title, slug, date, content }) => (
       <h1>{title}</h1>
     )}
     <h5>{date}</h5>
-    <p
+    <div
       dangerouslySetInnerHTML={{
         __html: content,
       }}
