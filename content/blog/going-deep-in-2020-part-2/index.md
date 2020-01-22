@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Going Deep in 2020 - Part 2"
-date: 2020-01-11
+date: 2020-01-22
 excerpt_separator: <!--more-->
 tags:
   - go deeper
