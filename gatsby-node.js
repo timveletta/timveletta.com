@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   const projectTemplate = path.resolve(`./src/templates/project-template.js`)
   const blogPost = path.resolve(`./src/templates/blog-post-template.js`)
   const tagsTemplate = path.resolve(`./src/templates/tags-template.js`)
+  const blogListTemplate = path.resolve("./src/templates/blog-list-template.js")
 
   return graphql(
     `
@@ -35,11 +36,28 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
     const posts = result.data.allMarkdownRemark.edges.filter(e =>
       e.node.fileAbsolutePath.includes("/blog/")
     )
 
+    // Create blog list pages.
+    const postsPerPage = 5
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+
+    // Create blog posts pages.
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
