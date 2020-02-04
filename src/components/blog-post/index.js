@@ -6,7 +6,7 @@ import { COLORS, FONTS } from "../../utils/css-globals"
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 2fr 0.8fr auto;
+  grid-template-rows: 1.5fr 0.8fr auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
@@ -41,8 +41,10 @@ const SubHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 
   h5 {
+    flex: 1 1 auto;
     font-family: ${FONTS.secondary};
     color: ${COLORS.muted};
     text-transform: uppercase;
@@ -52,11 +54,16 @@ const SubHeader = styled.div`
 `
 
 const TagsList = styled.div`
+  flex: 1 1 auto;
   color: ${COLORS.muted};
   text-transform: uppercase;
-  text-align: right;
+  text-align: right !important;
   font-weight: 600;
   font-size: 0.83em;
+
+  @media (max-width: 768px) {
+    text-align: left !important;
+  }
 `
 
 const BlogPostPreview = ({ title, slug, date, excerpt }) => (
