@@ -41,8 +41,6 @@ const Posts = styled.div`
   align-content: space-around;
 `
 
-const Tags = styled.div``
-
 class Blog extends React.Component {
   render() {
     const { data } = this.props
@@ -65,16 +63,11 @@ class Blog extends React.Component {
                 title={node.frontmatter.title || node.fields.slug}
                 slug={node.fields.slug}
                 date={node.frontmatter.date}
+                tags={node.frontmatter.tags}
                 content={node.html}
               />
             ))}
           </Posts>
-          {/* <Tags>
-            <h2>Tags</h2>
-            <ul>
-              <li>Tag</li>
-            </ul>
-          </Tags> */}
         </BlogPosts>
       </Layout>
     )
@@ -100,6 +93,7 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            tags
           }
         }
       }

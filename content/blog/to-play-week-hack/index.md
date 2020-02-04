@@ -4,7 +4,7 @@ title: "ToPlay.tv - My Solo Hackathon"
 date: 2019-04-15
 excerpt_separator: <!--more-->
 tags:
-  - gamedev
+  - game dev
   - aws
   - toplay.tv
 ---

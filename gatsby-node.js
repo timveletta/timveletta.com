@@ -6,6 +6,8 @@ exports.createPages = ({ graphql, actions }) => {
 
   const projectTemplate = path.resolve(`./src/templates/project-template.js`)
   const blogPost = path.resolve(`./src/templates/blog-post-template.js`)
+  const tagsTemplate = path.resolve(`./src/templates/tags-template.js`)
+
   return graphql(
     `
       {
@@ -21,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                tags
               }
             }
           }
@@ -52,6 +55,24 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    // create tags pages
+    const tags = result.data.allMarkdownRemark.edges
+      .map(e => e.node.frontmatter.tags)
+      .flat()
+      .filter((tag, index, array) => array.indexOf(tag) === index)
+      .sort()
+
+    tags.forEach(tag =>
+      createPage({
+        path: `/tag/${tag}`,
+        component: tagsTemplate,
+        context: {
+          tag: tag,
+        },
+      })
+    )
+
+    // create projects pages
     const projects = result.data.allMarkdownRemark.edges.filter(e =>
       e.node.fileAbsolutePath.includes("/projects/")
     )

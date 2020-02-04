@@ -45,6 +45,7 @@ class BlogPostTemplate extends React.Component {
             title={post.frontmatter.title}
             date={post.frontmatter.date}
             content={post.html}
+            tags={post.frontmatter.tags}
           />
           <FurtherPosts>
             <li>
@@ -84,6 +85,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        tags
       }
     }
   }

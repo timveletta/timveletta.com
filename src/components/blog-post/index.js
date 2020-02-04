@@ -6,8 +6,9 @@ import { COLORS, FONTS } from "../../utils/css-globals"
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: 8rem 2rem auto;
-  margin: 1rem;
+  grid-template-rows: 2fr 0.8fr auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   a {
     text-decoration: none;
@@ -23,13 +24,7 @@ const Container = styled.div`
     font-family: ${FONTS.primary};
     color: ${COLORS.accent};
   }
-  h5 {
-    margin: 0.5rem;
-    font-family: ${FONTS.secondary};
-    color: ${COLORS.muted};
-    text-transform: uppercase;
-    text-align: left;
-  }
+
   div {
     line-height: 2;
     font-family: ${FONTS.secondary};
@@ -42,12 +37,36 @@ const Container = styled.div`
   }
 `
 
+const SubHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h5 {
+    font-family: ${FONTS.secondary};
+    color: ${COLORS.muted};
+    text-transform: uppercase;
+    text-align: left;
+    display: inline-flex;
+  }
+`
+
+const TagsList = styled.div`
+  color: ${COLORS.muted};
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.83em;
+`
+
 const BlogPostPreview = ({ title, slug, date, excerpt }) => (
-  <Container>
+  <Container style={{ margin: "1rem" }}>
     <Link to={slug}>
       <h2>{title}</h2>
     </Link>
-    <h5>{date}</h5>
+    <SubHeader>
+      <h5>{date}</h5>
+    </SubHeader>
     <div
       dangerouslySetInnerHTML={{
         __html: excerpt,
@@ -64,9 +83,10 @@ BlogPostPreview.propTypes = {
   slug: PropTypes.string.isRequired,
   date: PropTypes.string,
   excerpt: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
 }
 
-const BlogPost = ({ title, slug, date, content }) => (
+const BlogPost = ({ title, slug, date, content, tags }) => (
   <Container>
     {slug ? (
       <Link to={slug}>
@@ -75,7 +95,19 @@ const BlogPost = ({ title, slug, date, content }) => (
     ) : (
       <h1>{title}</h1>
     )}
-    <h5>{date}</h5>
+    <SubHeader>
+      <h5>{date}</h5>
+      <TagsList>
+        Tags:{" "}
+        {tags &&
+          tags.map((tag, index) => (
+            <Link key={tag} to={`/tag/${tag}`}>
+              {tag}
+              {index === tags.length - 1 ? "" : ", "}
+            </Link>
+          ))}
+      </TagsList>
+    </SubHeader>
     <div
       dangerouslySetInnerHTML={{
         __html: content,
