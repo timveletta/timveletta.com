@@ -36,3 +36,8 @@ pre code {
   white-space: inherit;
   padding: 0;
 }
+
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}

@@ -11,8 +11,8 @@ import { COLORS, FONTS } from "../utils/css-globals"
 
 const Section = styled.div`
   text-align: center;
-
-  max-width: 1200px;
+  width: 1200px;
+  max-width: 100vw;
   margin-left: auto;
   margin-right: auto;
   padding: 4rem 0.5rem 6rem 0.5rem;

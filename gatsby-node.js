@@ -56,7 +56,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
 
     // create tags pages
-    const tags = result.data.allMarkdownRemark.edges
+    const tags = posts
       .map(e => e.node.frontmatter.tags)
       .flat()
       .filter((tag, index, array) => array.indexOf(tag) === index)

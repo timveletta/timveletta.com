@@ -26,8 +26,8 @@ I have all these board games that I enjoy, but there is 101 of them in total; th
 
 This boils down to 2 main objectives:
 
-1. No more acquiring board games as long as I have unplayed board games in my collection.
-2. If a new board game is completely necessary then it **must** replace an existing game in my collection.
+1. **No more acquiring board games as long as I have unplayed board games in my collection.**
+2. **If a new board game is completely necessary then it _must_ replace an existing game in my collection.**
 
 ---
 
@@ -39,8 +39,8 @@ One look at my Steam account will highlight this issue manifesting through video
 
 This gives rise to a further 3 objectives:
 
-4. No more buying video games, full stop.
-5. Finish at least 12 video games this year.
-6. No more new side projects until I finish or close off all of my existing side projects.
+4. **No more buying video games, full stop.**
+5. **Finish at least 12 video games this year.**
+6. **No more new side projects until I finish or close off all of my existing side projects.**
 
 I'm hoping to keep myself accountable to this by making monthly posts about how I'm **going deeper** in 2020 so I look forward to telling you about my journey.

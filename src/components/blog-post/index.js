@@ -9,6 +9,7 @@ const Container = styled.div`
   grid-template-rows: 1.5fr 0.8fr auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  max-width: calc(100vw - 1rem);
 
   a {
     text-decoration: none;

@@ -9,7 +9,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 100vw;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
